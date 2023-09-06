@@ -27,7 +27,7 @@ def test_fifth_lesson(setup_browser):
     browser.element('label[for=hobbies-checkbox-2]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
     browser.element('#uploadPicture').send_keys(
-        os.path.abspath('')
+        os.path.abspath('resources/bug_hunters_tester.jpg')
     )
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
