@@ -5,12 +5,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selene import Browser, Config
 
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 # from utils import attach
 
 @pytest.fixture(scope='function')
 def setup_browser(request):
-    browser_version = "100.0"
+    browser_version = "116.0"
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
