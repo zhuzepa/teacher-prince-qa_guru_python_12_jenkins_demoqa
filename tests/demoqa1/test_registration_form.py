@@ -2,7 +2,7 @@ from selene import browser, have, command
 import os
 
 
-def test_fifth_lesson(setup_browser):
+def test_demoqa(setup_browser):
     browser.open('https://demoqa.com/automation-practice-form')
 
     browser.element('#firstName').type('Ezekiel')
