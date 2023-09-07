@@ -1,13 +1,20 @@
-import os
+from allure_commons.types import Severity
 from selene import have, browser, command
-from selene.core.command import js
+
 import allure
-import tests
 
 
 @allure.title('Успешное заполнение формы регистарции')
 def test_demoqa(setup_browser):
-
+    allure.dynamic.tag('web')
+    allure.dynamic.severity(Severity.BLOCKER)
+    allure.dynamic.feature('Авторизация')
+    allure.dynamic.story('Отображение страницы входа')
+    allure.dynamic.label('owner', 'PrinceAA')
+    allure.dynamic.link(
+        'https://testit.pgk.ru/projects/3300/tests/25865?isolatedSection=4ef8f76a-4926-480f-a888-658d75812697',
+        name='Авторизация. Отображение страницы входа',
+    )
     browser.open('/automation-practice-form')
 
     browser.element('#firstName').type('Ezekiel')
@@ -31,9 +38,9 @@ def test_demoqa(setup_browser):
     browser.element('label[for=hobbies-checkbox-1]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-2]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
-    # browser.element('#uploadPicture').send_keys(
-    #     os.path.abspath('resources/bug_hunters_tester.jpg')
-    # )
+    browser.element('#uploadPicture').send_keys(
+        r'C:\Users\ChirkinAA\PycharmProjects\teacher-prince-qa_guru_python_12_jenkins_demoqa\tests\demoqa1\resources\bug_hunters_tester.jpg'
+    )
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
     browser.all('[id^=react-select][id*=option]').element_by(
