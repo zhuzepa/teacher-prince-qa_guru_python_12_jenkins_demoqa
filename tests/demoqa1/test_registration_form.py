@@ -4,6 +4,7 @@ from allure_commons.types import Severity
 from selene import have, browser, command
 
 import allure
+import tests
 
 
 @allure.title('Успешное заполнение формы регистарции')
@@ -47,9 +48,11 @@ def test_demoqa(setup_browser):
         browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
 
     with allure.step('Загрузка файла'):
-        browser.element('#uploadPicture').set_value(
-            os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, 'resources/oyboy.jpg')))
-        # browser.element('#uploadPicture').send_keys(os.path.abspath('./oyboy.jpg'))
+        browser.element("#uploadPicture").set_value(
+            os.path.abspath(
+                os.path.join(os.path.dirname(tests.__file__), 'resources/oyboy.jpg')
+            )
+        )
 
     with allure.step('Заполнение адреса'):
         browser.element('#currentAddress').type('841 Alvis Union')
