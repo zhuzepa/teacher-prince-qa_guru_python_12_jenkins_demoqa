@@ -9,10 +9,11 @@ from selene.support.shared import browser
 
 
 @pytest.fixture(
-    autouse=True)  # Список всех доступных парамеров https://peter.sh/experiments/chromium-command-line-switches/
+    autouse=True)
 def setup_browser():
-    browser.config.window_height = 1400
-    browser.config.window_width = 1600
+    browser.config.base_url = 'https://demoqa.com'
+    browser.config.window_height = 1920
+    browser.config.window_width = 1080
     browser_version = "100.0"
     options = Options()
     selenoid_capabilities = {
@@ -39,7 +40,7 @@ def setup_browser():
 # def setup_browser():
 #     browser.config.window_width = 1400
 #     browser.config.window_height = 1600
-#     browser.config.base_url = 'https://demoqa.com'
+#    '
 #     options = Options()
 #     selenoid_capabilities = {
 #         "browserName": "chrome",

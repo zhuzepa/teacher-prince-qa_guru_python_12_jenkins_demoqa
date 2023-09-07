@@ -7,7 +7,7 @@ import tests
 
 @allure.title('Успешное заполнение формы регистарции')
 def test_demoqa(setup_browser):
-    browser.open('https://demoqa.com/automation-practice-form')
+    browser.open('/automation-practice-form')
 
     browser.element('#firstName').type('Ezekiel')
     browser.element('#lastName').type('Romaguera')
@@ -30,9 +30,10 @@ def test_demoqa(setup_browser):
     browser.element('label[for=hobbies-checkbox-1]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-2]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
-    # browser.element('#uploadPicture').send_keys(
-    #     os.path.abspath('../resource/russia.png')
-    # )
+
+    browser.element('#uploadPicture').send_keys(
+        os.path.abspath('c'))
+
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
     browser.all('[id^=react-select][id*=option]').element_by(
@@ -56,7 +57,7 @@ def test_demoqa(setup_browser):
             '14 December,1905',
             'English, Arts',
             'Sports, Reading, Music',
-            '',
+            'russia',
             '841 Alvis Union',
             'Haryana Karnal',
         )
