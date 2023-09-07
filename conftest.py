@@ -38,24 +38,24 @@ from utils import attach
 #
 #     browser.quit()
 
-
-@pytest.fixture()
-def practice_form():
-    browser.config.base_url = 'https://demoqa.com'
-    browser.config.window_width = 2000
-    browser.config.window_height = 1080
-
-    yield
-
-    browser.quit()
-
-    import pytest
-
-    from selenium import webdriver
-    from selenium.webdriver.chrome.options import Options
-    from selene import Browser, Config
-
-    from utils import attach
+#
+# @pytest.fixture()
+# def practice_form():
+#     browser.config.base_url = 'https://demoqa.com'
+#     browser.config.window_width = 2000
+#     browser.config.window_height = 1080
+#
+#     yield
+#
+#     browser.quit()
+#
+#     import pytest
+#
+#     from selenium import webdriver
+#     from selenium.webdriver.chrome.options import Options
+#     from selene import Browser, Config
+#
+#     from utils import attach
 
 
 @pytest.fixture(scope='function')
@@ -78,6 +78,5 @@ def setup_browser(request):
 
     browser = Browser(Config(driver))
     yield browser
-
 
     browser.quit()
