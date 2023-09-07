@@ -39,7 +39,7 @@ def test_demoqa(setup_browser):
     browser.element('label[for=hobbies-checkbox-2]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
     browser.element('#uploadPicture').send_keys(
-        r'C:\Users\ChirkinAA\PycharmProjects\teacher-prince-qa_guru_python_12_jenkins_demoqa\tests\demoqa1\resources\bug_hunters_tester.jpg'
+        r'C:\Users\ChirkinAA\PycharmProjects\teacher-prince-qa_guru_python_12_jenkins_demoqa\resources\oyboy.jpg'
     )
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
@@ -64,7 +64,7 @@ def test_demoqa(setup_browser):
             '14 December,1905',
             'English, Arts',
             'Sports, Reading, Music',
-            'bug_hunters_tester.jpg',
+            'oyboy.jpg',
             '841 Alvis Union',
             'Haryana Karnal',
         )
