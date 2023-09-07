@@ -1,11 +1,11 @@
+import os
 import pytest
 
 from selenium import webdriver
-from selene import browser
 from selenium.webdriver.chrome.options import Options
-from selene import browser, Browser, Config
-
+from selene import Browser, Config
 from utils import attach
+from selene.support.shared import browser
 
 
 @pytest.fixture(
