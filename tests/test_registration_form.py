@@ -32,35 +32,36 @@ def test_demoqa(setup_browser):
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
 
     browser.element('#uploadPicture').send_keys(
-        os.path.abspath('c'))
+        r'C:\Users\ChirkinAA\PycharmProjects\teacher-prince-qa_guru_python_12_jenkins_demoqa\resources\oyboy.jpg')
 
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
     browser.all('[id^=react-select][id*=option]').element_by(
-        have.exact_text('Haryana')
-    ).click()
+    have.exact_text('Haryana')
 
-    browser.element('#city').click()
+).click()
 
-    browser.all('[id^=react-select][id*=option]').element_by(
-        have.exact_text('Karnal')
-    ).click()
-    browser.element('#submit').press_enter()
-    browser.element('#submit').perform(command.js.click)
+browser.element('#city').click()
 
-    browser.all('.table-responsive .table td:nth-child(2)').should(
-        have.exact_texts(
-            'Ezekiel Romaguera',
-            'fakedata72553@gmail.com',
-            'Male',
-            '1234567890',
-            '14 December,1905',
-            'English, Arts',
-            'Sports, Reading, Music',
-            'russia',
-            '841 Alvis Union',
-            'Haryana Karnal',
-        )
-    )
+browser.all('[id^=react-select][id*=option]').element_by(
+have.exact_text('Karnal')
+).click()
+browser.element('#submit').press_enter()
+browser.element('#submit').perform(command.js.click)
 
-    browser.element('#closeLargeModal').click()
+browser.all('.table-responsive .table td:nth-child(2)').should(
+have.exact_texts(
+    'Ezekiel Romaguera',
+    'fakedata72553@gmail.com',
+    'Male',
+    '1234567890',
+    '14 December,1905',
+    'English, Arts',
+    'Sports, Reading, Music',
+    'russia',
+    '841 Alvis Union',
+    'Haryana Karnal',
+)
+)
+
+browser.element('#closeLargeModal').click()
