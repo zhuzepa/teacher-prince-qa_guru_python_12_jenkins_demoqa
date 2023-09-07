@@ -13,7 +13,7 @@ def test_demoqa(setup_browser):
     allure.dynamic.label('owner', 'PrinceAA')
     allure.dynamic.link(
         'https://testit.pgk.ru/projects/3300/tests/25865?isolatedSection=4ef8f76a-4926-480f-a888-658d75812697',
-        name='Авторизация. Отображение страницы входа',
+        name='Авторизация. Отображение страницы входа1',
     )
     browser.open('/automation-practice-form')
 
