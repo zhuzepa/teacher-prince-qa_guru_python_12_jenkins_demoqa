@@ -1,1 +1,0 @@
-[33mWARNING [0m urllib3.connectionpool:connectionpool.py:823 Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection broken: IncompleteRead(442170 bytes read, 55446 more expected)', IncompleteRead(442170 bytes read, 55446 more expected))': /wd/hub/session/c900e4d1773e0bfc8e556e3e53ac47a0/screenshot
