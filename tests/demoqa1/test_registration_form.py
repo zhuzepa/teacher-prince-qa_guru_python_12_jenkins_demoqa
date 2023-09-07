@@ -8,7 +8,7 @@ import tests
 @allure.title('Успешное заполнение формы регистарции')
 def test_demoqa(setup_browser):
 
-    browser.open('/automation-practice-form')
+    browser.open('https://demoqa.com/automation-practice-form')
 
     browser.element('#firstName').type('Ezekiel')
     browser.element('#lastName').type('Romaguera')
@@ -31,9 +31,9 @@ def test_demoqa(setup_browser):
     browser.element('label[for=hobbies-checkbox-1]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-2]').perform(command.js.click)
     browser.element('label[for=hobbies-checkbox-3]').perform(command.js.click)
-    # browser.element('#uploadPicture').send_keys(
-    #     os.path.abspath('resources/bug_hunters_tester.jpg')
-    # )
+    browser.element('#uploadPicture').send_keys(
+        os.path.abspath('resources/bug_hunters_tester.jpg')
+    )
     browser.element('#currentAddress').type('841 Alvis Union')
     browser.element('#state').click()
     browser.all('[id^=react-select][id*=option]').element_by(
